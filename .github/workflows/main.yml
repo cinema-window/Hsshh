@@ -41,7 +41,7 @@ jobs:
           VITE_IMGBB_API_KEY: ${{ secrets.VITE_IMGBB_API_KEY }}
           VITE_TELEGRAM_BOT_TOKEN: ${{ secrets.VITE_TELEGRAM_BOT_TOKEN }}
           VITE_TELEGRAM_CHAT_ID: ${{ secrets.VITE_TELEGRAM_CHAT_ID }}
-        run: npm run build -- --base=./
+        run: npx vite build --base=./
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -51,3 +51,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
